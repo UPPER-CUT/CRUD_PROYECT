@@ -7,11 +7,15 @@ class Rutas
     private $_argumentos;
     public function __construct()
     {
+        
         if ($_GET['url'] === "") {//en caso de url vacia
             $_GET['url'] = "index.php";
         }
 
-        if (preg_match('/^index\.php$/i',$_GET['url']) == false) {//si solo tenemo index.php al principio de la url
+
+        if (preg_match('/^index\.php$/i',$_GET['url']) == false) 
+        {//si solo tenemo index.php al principio de la url
+
             $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL); // ELIMINA CARACTERES ESPECIALES
             $url = explode('/', $url);  // ARREGLO A PARTIR DE /
 

@@ -1,20 +1,13 @@
 <?php
-
-class indexController
+class indexController extends Controller
 {
-    public function __construct()
+  public function __construct()
     {
-
-        echo "Soy el index pricipal".PHP_EOL;
-        # code...
+       parent::__construct();
     }
 
-    public function index()
-    {
-        echo "soy el metodo index".PHP_EOL;
+    public function index(){
+        $this->_view->renderizar('index');
     }
 
-    public function saludar(){
-        echo "saludar".PHP_EOL;
-    }
 }

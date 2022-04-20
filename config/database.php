@@ -1,7 +1,7 @@
 <?php
 
 /**Uso del patron singleton para mi conexion a mi base de datos */
-class Singleton_Database_conexion
+class Database
 {
     private static $instancia;
     private $conexion;
@@ -13,7 +13,7 @@ class Singleton_Database_conexion
     public static function get_instance()
     {
         if (is_null(self::$instancia)) {
-            self::$instancia = new Singleton_Database_conexion();
+            self::$instancia = new Database();
         }
         return self::$instancia;
     }
@@ -40,7 +40,3 @@ class Singleton_Database_conexion
 }
 
 
-$objeto=Singleton_Database_conexion::get_instance();
-$objeto->conect_db();
-
-var_dump($objeto);
